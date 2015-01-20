@@ -6,7 +6,7 @@ OPENGL = OpenGL
 BASE = Bodies
 EXT = py
 TARGET = $(BASE).$(EXT)
-PACKAGE = jp.ac.kyoto_su.cse.wz
+PACKAGE = jp
 INSTDIR = Bodies.app/Contents/Resources/Python/
 NAME = Bodies
 DATA = dragon.txt wasp.txt bunny.ply penguin.txt oni.txt baby.txt
@@ -25,8 +25,10 @@ test: all
 		$(PYTHON) $(TARGET)
 install: all
 		if [ ! -e $(INSTDIR) ] ; then mkdir	$(INSTDIR) ; fi
-		cp -p -r $(TARGET) jp $(INSTDIR)
-		cp -R -L $(OPENGL) $(INSTDIR)
+		if [ ! -e $(INSTDIR)/$(PYOPENGL) ] ; then cp -p -r $(PYOPENGL) $(INSTDIR); fi
+		if [ ! -e $(INSTDIR)/$(TARGET) ] ; then cp -p -r $(TARGET) $(INSTDIR); fi
+		if [ ! -e $(INSTDIR)/$(PACKAGE) ] ; then cp -p -r $(PACKAGE) $(INSTDIR); fi
+
 zip:	clean wipe
 		(cd	.. ; zip -r	$(NAME).zip	./$(NAME)/)
 sdist:	clean

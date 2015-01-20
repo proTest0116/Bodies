@@ -1,5 +1,0 @@
-include MANIFEST.in
-include Makefile
-include Bodies.py
-include PyOpenGL-3.0.2.zip
-recursive-include Bodiesapp *
