@@ -3,6 +3,12 @@ if you’d like to test Bodies, Type as below to Terminal.app
 
 $ make test
 
+or the way to open the application, Type as below to Terminal.app
+
+$ make
+$ make install
+
+And open Bodies.app by doubleclick
 We use as reference by AOKI Atsushi.The reference puts to below.
 http://www.cc.kyoto-su.ac.jp/~atsushi/Programs/Python/DragonPrgrammingProcess/index-j.html
 
